@@ -44,6 +44,9 @@
         font-size: 14px
         line-height: 24px
         border-radius: 3px
+        &::-webkit-inner-spin-button
+          display: none
+          appearance: none
         &:hover
           border: 1px solid #000
         &:focus
@@ -57,7 +60,28 @@
         display: block
         &:hover
           color: #f53a31
+      &-list
+        &__title
+          font-size: 14px
+        &__item
+          padding: 16px 0 16px 32px
+          border-bottom: 1px solid #DFE3E6
+          &__checkbox
+            display: none
+          &__label
+            position: relative
+            &::before
+              content: ''
+              border: 1px solid #DFE3E6
+              width: 20px
+              height: 20px
+              background: #fff
+              position: absolute
+              left: -32px
+              top: -1px
+              border-radius: 6px
       &-choice
+        margin-top: 36px
         &__label
           padding: 10px 13px
           background: linear-gradient(90deg, #EEF0F2 0%, #EEF0F2 100%)

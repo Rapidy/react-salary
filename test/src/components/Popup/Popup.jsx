@@ -3,6 +3,7 @@ import './popup.sass';
 
 import timesIcon from '../../img/times.svg';
 import Button from '../Button/Button';
+import Checkbox from './Checkbox';
 
 export default function Popup(props) {
   const [toggleCalculate, setToggleCalculate] = useState(false);
@@ -63,9 +64,17 @@ export default function Popup(props) {
             Рассчитать
           </button>
 
-          {list.map((item) => (
-            <div>{item}</div>
-          ))}
+          <ul className='popup-overlay-box-list'>
+            <h2 className='popup-overlay-box-list__title'>
+              Итого можете внести в качестве досрочных:
+            </h2>
+            {list.length &&
+              list.map((item, i) => (
+                <Checkbox key={i} year={++i}>
+                  {item}
+                </Checkbox>
+              ))}
+          </ul>
 
           <div className='popup-overlay-box-choice'>
             <span className='popup-overlay-box-choice__title'>Что уменьшаем?</span>
