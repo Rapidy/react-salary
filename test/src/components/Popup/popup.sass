@@ -12,10 +12,14 @@
     align-items: center
     &-box
       background: #fff
-      padding: 32px
+      padding: 36px 32px
       position: relative
       border-radius: 30px
       width: 552px
+      display: flex
+      flex-direction: column
+      .btn--red
+        margin-top: auto
       &__close
         position: absolute
         top: 27px
@@ -51,25 +55,38 @@
           border: 1px solid #000
         &:focus
           outline: none
+      &__error
+        font-size: 10px
+        color: #ea0029
+        margin-top: 4px
       &__calculate
         color: #ea0029
         margin-top: 12px
         font-size: 14px
-        margin-bottom: 28px
         font-weight: 500
-        display: block
+        align-self: start
+        margin-bottom: 28px
         &:hover
           color: #f53a31
       &-list
+        margin-bottom: 20px
         &__title
           font-size: 14px
+          margin-bottom: 5px
         &__item
           padding: 16px 0 16px 32px
           border-bottom: 1px solid #DFE3E6
           &__checkbox
             display: none
+            &:checked + label
+              &::before
+                background: url('../../img/checked.svg') no-repeat center / cover
+                border: 1px solid transparent
           &__label
+            cursor: pointer
             position: relative
+            span
+              color: #808080
             &::before
               content: ''
               border: 1px solid #DFE3E6
@@ -81,24 +98,66 @@
               top: -1px
               border-radius: 6px
       &-choice
-        margin-top: 36px
-        &__label
-          padding: 10px 13px
-          background: linear-gradient(90deg, #EEF0F2 0%, #EEF0F2 100%)
-          font-weight: 400
-          font-size: 14px
-          border-radius: 50px
-          cursor: pointer
-          &:not(:last-of-type)
-            margin-right: 16px
-            margin-left: 32px
-        &__input
-          display: none
-          &:checked + label
-            color: #fff
-            background: linear-gradient(90deg, #ff605b 0%, #e43938 100%)
+        margin-bottom: 40px
         &__title
-          font-size: 14px
           font-weight: 500
-          display: inline-block
-          margin-bottom: 50px
+        &-buttons
+          display: inline-flex
+          margin-left: 32px
+          &__label
+            padding: 10px 13px
+            background: linear-gradient(90deg, #EEF0F2 0%, #EEF0F2 100%)
+            font-weight: 400
+            font-size: 14px
+            border-radius: 50px
+            cursor: pointer
+            display: inline-block
+            &:not(:last-of-type)
+              margin-right: 16px
+          &__input
+            display: none
+            &:checked + label
+              color: #fff
+              background: linear-gradient(90deg, #ff605b 0%, #e43938 100%)
+          &__title
+            font-size: 14px
+            font-weight: 500
+            display: inline-block
+            margin-bottom: 50px
+
+@media screen and (max-width: 570px)
+  .popup
+    &-overlay
+      &-box
+        width: 100%
+        height: 100vh
+        border-radius: 0
+        padding: 32px 16px
+        &-choice
+          &-buttons
+            margin-left: 0
+            margin-top: 24px
+            display: flex
+            &__label
+              &:not(:last-of-type)
+                margin-right: 8px
+
+@media screen and (max-width: 400px)
+  .popup
+    &-overlay
+      &-box
+        &__close
+          img
+            width: 12px
+            height: 12px
+        &__title
+          font-size: 18px
+        &__descr
+          font-size: 12px
+          line-height: 16px
+        &-list
+          &__item
+            font-size: 14px
+        &-choice
+          &__title
+            font-size: 14px

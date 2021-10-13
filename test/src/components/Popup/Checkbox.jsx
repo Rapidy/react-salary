@@ -13,7 +13,7 @@ export default function Checkbox(props) {
 
   useEffect(() => {
     checkYearPostfix();
-  }, []);
+  });
 
   return (
     <li className='popup-overlay-box-list__item'>
@@ -21,9 +21,11 @@ export default function Checkbox(props) {
         className='popup-overlay-box-list__item__checkbox'
         type='checkbox'
         id={props.year}
+        value={props.children}
       />
       <label className='popup-overlay-box-list__item__label' htmlFor={props.year}>
-        {props.children} рублей <span>в {`${props.year}-${yearPostfix}`} год</span>
+        {props.children.toLocaleString('ru-Ru')} рублей{' '}
+        <span>в {`${props.year}-${yearPostfix}`} год</span>
       </label>
     </li>
   );

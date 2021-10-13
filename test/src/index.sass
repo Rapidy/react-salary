@@ -8,8 +8,6 @@
 @include font('LabGrotesque', 500, './fonts/LabGrotesque-Medium.woff2')
 
 body
-  padding: 0
-  margin: 0
   font-size: 16px
 
 h1, h2, h3, h4, h5, h6
@@ -21,6 +19,7 @@ p
 
 ul
   padding: 0
+  margin: 0
   li
     list-style-type: none
 
@@ -38,3 +37,9 @@ button
 
 ::placeholder
   color: #bec5cc
+
+input
+  &.invalid
+    border-color: #EA0029
+  &:required:valid
+    border-color: initial
