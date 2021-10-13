@@ -68,11 +68,21 @@
         margin-bottom: 28px
         &:hover
           color: #f53a31
+      &__deductionTitle
+        font-size: 14px
+        margin-bottom: 5px
       &-list
         margin-bottom: 20px
-        &__title
-          font-size: 14px
-          margin-bottom: 5px
+        max-height: 40vh
+        overflow-y: auto
+        &::-webkit-scrollbar
+          appearance: none
+          width: 5px
+          border-radius: 6px
+          background: #0000000e
+        &::-webkit-scrollbar-thumb
+          background: linear-gradient(180deg, #ff605b 0%, #e43938 100%)
+          border-radius: 6px
         &__item
           padding: 16px 0 16px 32px
           border-bottom: 1px solid #DFE3E6

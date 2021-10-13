@@ -118,17 +118,20 @@ export default function Popup(props) {
           </button>
 
           {isShowedCalculate && (
-            <ul className='popup-overlay-box-list'>
-              <h2 className='popup-overlay-box-list__title'>
+            <>
+              <h2 className='popup-overlay-box__deductionTitle'>
                 Итого можете внести в качестве досрочных:
               </h2>
-              {list.length &&
-                list.map((item, i) => (
-                  <Checkbox key={`${i}_${item}`} year={++i}>
-                    {item}
-                  </Checkbox>
-                ))}
-            </ul>
+
+              <ul className='popup-overlay-box-list'>
+                {list.length &&
+                  list.map((item, i) => (
+                    <Checkbox key={`${i}_${item}`} year={++i}>
+                      {item}
+                    </Checkbox>
+                  ))}
+              </ul>
+            </>
           )}
 
           <div className='popup-overlay-box-choice'>
