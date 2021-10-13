@@ -1,0 +1,80 @@
+.popup
+  &-overlay
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 3
+    background: #b3b3b3
+    display: flex
+    justify-content: center
+    align-items: center
+    &-box
+      background: #fff
+      padding: 32px
+      position: relative
+      border-radius: 30px
+      width: 552px
+      &__close
+        position: absolute
+        top: 27px
+        right: 27px
+        &:hover
+          img
+            filter: brightness(.8)
+      &__title
+        font-size: 28px
+        margin-bottom: 16px
+      &__descr
+        font-size: 14px
+        line-height: 24px
+        color: #808080
+        max-width: 424px
+        margin-bottom: 24px
+      &__label
+        font-weight: 500
+      &__input
+        margin-top: 12px
+        display: block
+        width: 100%
+        padding: 8px 10px
+        border-radius: 3px
+        border: 1px solid #DFE3E6
+        font-size: 14px
+        line-height: 24px
+        border-radius: 3px
+        &:hover
+          border: 1px solid #000
+        &:focus
+          outline: none
+      &__calculate
+        color: #ea0029
+        margin-top: 12px
+        font-size: 14px
+        margin-bottom: 28px
+        font-weight: 500
+        display: block
+        &:hover
+          color: #f53a31
+      &-choice
+        &__label
+          padding: 10px 13px
+          background: linear-gradient(90deg, #EEF0F2 0%, #EEF0F2 100%)
+          font-weight: 400
+          font-size: 14px
+          border-radius: 50px
+          cursor: pointer
+          &:not(:last-of-type)
+            margin-right: 16px
+            margin-left: 32px
+        &__input
+          display: none
+          &:checked + label
+            color: #fff
+            background: linear-gradient(90deg, #ff605b 0%, #e43938 100%)
+        &__title
+          font-size: 14px
+          font-weight: 500
+          display: inline-block
+          margin-bottom: 50px

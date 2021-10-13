@@ -1,0 +1,35 @@
+@mixin font($fname, $fweight, $furl)
+  @font-face
+    font-family: $fname
+    font-weight: $fweight
+    src: url($furl) format('woff2')
+
+@include font('LabGrotesque', 400, './fonts/LabGrotesque-Regular.woff2')
+@include font('LabGrotesque', 500, './fonts/LabGrotesque-Medium.woff2')
+
+body
+  padding: 0
+  margin: 0
+  font-size: 16px
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+  font-weight: 500
+
+p
+  margin: 0
+
+button
+  outline: none
+  border: none
+  background: none
+  cursor: pointer
+  padding: 0
+
+*
+  transition: .2s
+  font-family: 'LabGrotesque', sans-serif
+  box-sizing: border-box
+
+::placeholder
+  color: #bec5cc
